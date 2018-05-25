@@ -6,7 +6,7 @@ eval "$(fasd --init auto)"
 source ~/.commacd.bash
 
 # init fzf
-.fzf/install
+.fzf/install --key-bindings --completion --no-update-rc
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # AWS autocomplete
