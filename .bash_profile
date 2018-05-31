@@ -16,8 +16,8 @@ shopt -s histappend;
 shopt -s cdspell;
 
 # Add Homebrew `/usr/local/bin` and User `~/bin` to the `$PATH`
-path_prepend "/usr/local/bin"
-path_prepend "$HOME/bin"
+path_prepend "/usr/local/bin";
+path_prepend "$HOME/bin";
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
