@@ -40,3 +40,24 @@ fi;
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+
+# Added
+#---------------------------------------------------------------------
+
+# AWS autocomplete
+complete -C '/usr/local/bin/aws_completer' aws;
+
+# init fasd
+eval "$(fasd --init auto)";
+
+# init commacd
+source ~/.commacd.bash;
+
+# init fzf
+[ -f .fzf/install ] && .fzf/install --key-bindings --completion --no-update-rc &> /dev/null;
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash;
+
+# vim
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;

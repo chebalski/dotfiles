@@ -154,3 +154,16 @@ function tre() {
 
 # Added
 #---------------------------------------------------------------------
+
+path_append() {
+    if [ -d "$1" ] && [[ ! "$PATH" =~ (^|:)$1(:|$) ]]; then
+      export PATH="${PATH:+"$PATH:"}$1";
+    fi
+}
+
+# prepend to $PATH
+path_prepend() {
+    if [ -d "$1" ] && [[ ! "$PATH" =~ (^|:)$1(:|$) ]]; then
+        export PATH="$1${PATH+":$PATH"}";
+    fi
+}
