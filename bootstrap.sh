@@ -14,8 +14,8 @@ function doIt() {
 		--exclude "LICENSE-MIT.txt" \
 		--exclude ".idea/" \
 		-avh --no-perms . ~;
-	source ~/.bash_profile;
     cd fasd; PREFIX=$HOME make install; cd -
+	source ~/.bash_profile;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
