@@ -106,6 +106,8 @@ alias mv='mv -i'
 
 # fasd shortcuts
 alias aa='a -e atom'
+type xdg-open >/dev/null 2>&1 && alias open='xdg-open'
+alias o='a -e open'
 
 # docker
 alias dcb="docker-compose build"
