@@ -79,6 +79,13 @@
 		fi \
 	}; f"
 
+    # ------------------
+    # Added
+
+    # Tired of forgetting to fully type out "add"
+    a = add
+
+
 [apply]
 
 	# Detect whitespace errors when applying a patch
