@@ -119,3 +119,4 @@ alias di="docker images" # Get images
 alias dl="docker ps -l -q" # Get latest container ID
 alias dpa="docker ps -a" # Get containers including stoppped ones
 alias dps="docker ps" # Get container processes
+alias dprune="docker container prune -f && docker image prune -f"
