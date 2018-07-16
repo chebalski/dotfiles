@@ -46,7 +46,9 @@ fi;
 #---------------------------------------------------------------------
 
 # AWS autocomplete
-complete -C '/usr/local/bin/aws_completer' aws;
+if [ -f /usr/local/bin/aws_completer ]; then
+    complete -C '/usr/local/bin/aws_completer' aws;
+fi
 
 # init fasd
 eval "$(fasd --init auto)";
