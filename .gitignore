@@ -18,3 +18,5 @@ Thumbs.db
 
 # Pycharm
 .idea
+
+*.extra
