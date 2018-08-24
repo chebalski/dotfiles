@@ -117,10 +117,10 @@ alias dcu="docker-compose up"
 alias dex='docker exec -it $(dl) $1'
 alias di="docker images" # Get images
 alias dl="docker ps -l -q" # Get latest container ID
-alias dldl="docker logs $(docker ps -l -q)"
+alias dldl='docker logs $(dl)'
 alias dpa="docker ps -a" # Get containers including stoppped ones
 alias dps="docker ps" # Get container processes
 alias dprune="docker container prune -f && docker image prune -f"
 
 # aws
-alias als="aws s3 ls"
+alias als="aws s3 ls --human-readable"
