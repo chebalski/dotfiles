@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -63,3 +65,6 @@ source ~/.commacd.bash;
 # vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
+
+# pyenv
+eval "$(pyenv init -)"
