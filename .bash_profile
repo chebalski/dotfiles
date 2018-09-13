@@ -67,4 +67,4 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
 
 # pyenv
-eval "$(pyenv init -)"
+if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
