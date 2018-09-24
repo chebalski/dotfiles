@@ -68,3 +68,18 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 
 # pyenv
 if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
+
+# use brew coreutils, tar, getopt
+if which brew &> /dev/null; then
+    if [ -d "$(brew --prefix coreutils)" ]; then
+        path_prepend "$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+        export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+    fi
+    if [ -d "$(brew --prefix gnu-tar)" ]; then
+        path_prepend "$(brew --prefix gnu-tar)/libexec/gnubin:$PATH"
+        export MANPATH="$(brew --prefix gnu-tar)/libexec/gnuman:$MANPATH"
+    fi
+    if [ -d "$(brew --prefix gnu-getopt)" ]; then
+        path_prepend "$(brew --prefix gnu-getopt)/bin:$PATH"
+    fi
+fi
