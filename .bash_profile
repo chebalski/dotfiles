@@ -18,8 +18,8 @@ shopt -s histappend;
 shopt -s cdspell;
 
 # Add Homebrew `/usr/local/bin` and User `~/bin` to the `$PATH`
-path_prepend "/usr/local/bin";
-path_prepend "$HOME/bin";
+path_prepend PATH "/usr/local/bin";
+path_prepend PATH "$HOME/bin";
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
@@ -72,14 +72,14 @@ if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
 # use brew coreutils, tar, getopt
 if which brew &> /dev/null; then
     if [ -d "$(brew --prefix coreutils)" ]; then
-        path_prepend "$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-        export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+        path_prepend PATH "$(brew --prefix coreutils)/libexec/gnubin"
+        path_prepend MANPATH "$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
     fi
     if [ -d "$(brew --prefix gnu-tar)" ]; then
-        path_prepend "$(brew --prefix gnu-tar)/libexec/gnubin:$PATH"
-        export MANPATH="$(brew --prefix gnu-tar)/libexec/gnuman:$MANPATH"
+        path_prepend PATH "$(brew --prefix gnu-tar)/libexec/gnubin"
+        path_prepend MANPATH "$(brew --prefix gnu-tar)/libexec/gnuman:$MANPATH"
     fi
     if [ -d "$(brew --prefix gnu-getopt)" ]; then
-        path_prepend "$(brew --prefix gnu-getopt)/bin:$PATH"
+        path_prepend PATH "$(brew --prefix gnu-getopt)/bin"
     fi
 fi
