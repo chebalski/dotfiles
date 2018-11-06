@@ -183,3 +183,9 @@ path_remove() {
   aux=${aux//:$2:/:}; aux=${aux#:}; aux=${aux%:}
   printf -v "$1" '%s' "$aux"
 }
+
+drmi() {
+  local regex="$1"
+  docker images | grep $regex | awk '{print $1 ":" $2}' | xargs docker rmi
+  dprune
+}
