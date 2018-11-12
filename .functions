@@ -189,3 +189,12 @@ drmi() {
   docker images | grep $regex | awk '{print $1 ":" $2}' | xargs docker rmi
   dprune
 }
+
+ecs_login() {
+    read -p "AWS region [us-east-1]: " REGION
+    read -p "AWS docker repo [$ECS_REPO]: " USER_REPO
+    REGION=${REGION:-us-east-1}
+    ECS_REPO=${USER_REPO:-$ECS_REPO}
+    export ECS_REPO
+    aws ecr get-login --no-include-email --region $REGION | awk '{printf $6}' | docker login -u AWS $ECS_REPO --password-stdin
+}
