@@ -54,6 +54,7 @@ fi
 
 # init fasd
 eval "$(fasd --init auto)";
+unalias z
 
 # init commacd
 source ~/.commacd.bash;
