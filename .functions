@@ -205,3 +205,24 @@ function z() {
     local dir
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
+
+function init_brew_utils() {
+    # use brew coreutils, tar, getopt
+    if which brew &> /dev/null; then
+        local dir
+        dir=$(brew --prefix coreutils)
+        if [ -d dir ]; then
+            path_prepend PATH "$dir/libexec/gnubin"
+            path_prepend MANPATH "$dir/libexec/gnuman"
+        fi
+        dir=$(brew --prefix gnu-tar)
+        if [ -d $dir ]; then
+            path_prepend PATH "$dir/libexec/gnubin"
+            path_prepend MANPATH "$dir/libexec/gnuman"
+        fi
+        dir=$(brew --prefix gnu-getopt)
+        if [ -d dir ]; then
+            path_prepend PATH "$dir/bin"
+        fi
+    fi
+}
