@@ -207,7 +207,7 @@ function z() {
 }
 
 function init_brew_utils() {
-    # use brew coreutils, tar, getopt
+    # use brew coreutils, tar, getopt, grep, findutils
     if which brew &> /dev/null; then
         local dir
         dir=$(brew --prefix coreutils)
@@ -223,6 +223,16 @@ function init_brew_utils() {
         dir=$(brew --prefix gnu-getopt)
         if [ -d dir ]; then
             path_prepend PATH "$dir/bin"
+        fi
+				dir=$(brew --prefix grep)
+				if [ -d $dir ]; then
+						path_prepend PATH "$dir/libexec/gnubin"
+						path_prepend MANPATH "$dir/libexec/gnuman"
+				fi
+				dir=$(brew --prefix findutils)
+        if [ -d $dir ]; then
+            path_prepend PATH "$dir/libexec/gnubin"
+            path_prepend MANPATH "$dir/libexec/gnuman"
         fi
     fi
 }
