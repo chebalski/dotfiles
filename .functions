@@ -236,3 +236,10 @@ function init_brew_utils() {
         fi
     fi
 }
+
+# k8s
+# get most recent log grepping job name
+function kcl() {
+	pod="$(kubectl get pods -o name | grep "$1" | tail -n1)"
+	kubectl logs $pod
+}
