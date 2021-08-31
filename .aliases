@@ -124,3 +124,8 @@ alias dprune="docker container prune -f && docker image prune -f"
 
 # aws
 alias als="aws s3 ls --human-readable"
+
+# k8s
+alias kp='kubectl get pods'
+alias kcg='kubectl config get-contexts'
+alias kcu='kubectl config use-context'
