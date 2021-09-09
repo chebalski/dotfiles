@@ -67,9 +67,12 @@ source ~/.commacd.bash;
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
 
-# pyenv
-if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
-
-
 # use brew coreutils, tar, getopt
 init_brew_utils
+
+# pyenv
+if which pyenv &> /dev/null; then 
+	eval "$(pyenv init -)"; 
+	export PYENV_ROOT="$HOME/.pyenv";
+	path_prepend PATH "$PYENV_ROOT/shims";
+fi
