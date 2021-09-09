@@ -61,6 +61,7 @@ brew install vbindiff
 # -----------------------------------------------------
 brew install jq
 brew install pyenv
+brew install zenith
 
 # Remove outdated versions from the cellar.
 brew cleanup
