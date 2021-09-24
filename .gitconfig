@@ -1,7 +1,7 @@
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=format:"%C(yellow)%h\\ %Cblue%ad%Cred%d\\ %Creset%s" -n 20 --decorate --date=short --graph
+	l = log --pretty=format:'%C(yellow)%h %Cblue%ad%Cred%d %Creset%s' -n 20 --decorate --date=short --graph --abbrev=8
 
 	# View the current working tree status using the short format
 	s = status -s
