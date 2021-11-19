@@ -1,10 +1,3 @@
-#!/usr/bin/env bash
-
-# Easier navigation: .., ..., and --
-alias ..="cd .."
-alias ...="cd ../.."
-alias -- -="cd -"
-
 # Shortcuts
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
@@ -30,12 +23,6 @@ alias lsd="ls -ltF ${colorflag} | grep --color=never '^d'"
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
-
-# Always enable colored `grep` output
-# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
 # Get week number
 alias week='date +%V'

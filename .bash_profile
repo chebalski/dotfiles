@@ -57,7 +57,7 @@ eval "$(fasd --init auto)";
 unalias z
 
 # init commacd
-source ~/.commacd.bash;
+source ~/.commacd.sh;
 
 # init fzf
 [ -f .fzf/install ] && .fzf/install --key-bindings --completion --no-update-rc &> /dev/null;
@@ -71,8 +71,8 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 init_brew_utils
 
 # pyenv
-if which pyenv &> /dev/null; then 
-	eval "$(pyenv init -)"; 
+if which pyenv &> /dev/null; then
+	eval "$(pyenv init -)";
 	export PYENV_ROOT="$HOME/.pyenv";
 	path_prepend PATH "$PYENV_ROOT/shims";
 fi
