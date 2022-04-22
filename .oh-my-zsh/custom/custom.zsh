@@ -245,6 +245,14 @@ if which pyenv &> /dev/null; then
 	prepend_path PATH "$PYENV_ROOT/shims";
 fi
 
+# poetry
+prepend_path PATH "$HOME/.poetry/bin"
+
+# prioritize brew installs
+if which brew &> /dev/null; then
+	dir=$(brew --prefix)
+	prepend_path PATH "$dir/bin"
+fi
 
 # k8s
 source <(kubectl completion zsh)
@@ -255,3 +263,7 @@ eval "$(direnv hook zsh)"
 
 # java home
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_311)
+
+# 1pass cli
+eval "$(op completion zsh)"; compdef _op op
+

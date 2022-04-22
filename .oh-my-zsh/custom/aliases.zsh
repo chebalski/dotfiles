@@ -115,5 +115,9 @@ alias als="aws s3 ls --human-readable"
 # k8s
 alias k='kubectl'
 alias kp='kubectl get pods'
+alias kl='kubectl logs'
 alias kcg='kubectl config get-contexts'
 alias kcu='kubectl config use-context'
+
+# snowsql
+alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
