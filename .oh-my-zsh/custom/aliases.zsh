@@ -121,3 +121,7 @@ alias kcu='kubectl config use-context'
 
 # snowsql
 alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
+
+# excel
+alias xl='open -a "Microsoft Excel"'
+alias excel='open -a "Microsoft Excel"'
