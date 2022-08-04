@@ -267,3 +267,5 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_311)
 # 1pass cli
 eval "$(op completion zsh)"; compdef _op op
 
+# turn off history exapnsion
+set +o histexpand
