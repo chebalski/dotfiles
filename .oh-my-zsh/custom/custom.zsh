@@ -246,7 +246,7 @@ if which pyenv &> /dev/null; then
 fi
 
 # poetry
-prepend_path PATH "$HOME/.poetry/bin"
+prepend_path PATH "$HOME/.local/bin"
 
 # prioritize brew installs
 if which brew &> /dev/null; then
@@ -262,7 +262,7 @@ complete -F __start_kubectl k
 eval "$(direnv hook zsh)"
 
 # java home
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_311)
+export JAVA_HOME=$(/usr/libexec/java_home -v 18)
 
 # 1pass cli
 eval "$(op completion zsh)"; compdef _op op
