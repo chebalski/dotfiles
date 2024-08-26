@@ -125,3 +125,9 @@ alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 # excel
 alias xl='open -a "Microsoft Excel"'
 alias excel='open -a "Microsoft Excel"'
+
+# octavia
+alias octavia="docker run -i --rm -v \$(pwd):/home/octavia-project --network host --env-file \${OCTAVIA_ENV_FILE} --user \$(id -u):\$(id -g) airbyte/octavia-cli:0.42.1"
+
+# cursor
+alias csr='cursor .'
