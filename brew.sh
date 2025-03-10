@@ -72,6 +72,7 @@ brew install jq
 brew install pyenv
 brew install tldr
 brew install zenith
+brew install 1password-cli
 
 # Remove outdated versions from the cellar.
 brew cleanup
