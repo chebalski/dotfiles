@@ -1,4 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+
+prepend_path PATH $HOME/bin
+prepend_path PATH $HOME/.local/bin
+prepend_path PATH /usr/local/bin
 
 # Create a new directory and enter it
 function mkd() {
