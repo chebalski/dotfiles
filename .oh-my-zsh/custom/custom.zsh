@@ -292,3 +292,6 @@ _s5cmd_cli_zsh_autocomplete() {
 }
 
 compdef _s5cmd_cli_zsh_autocomplete s5cmd
+
+#  duckdb
+prepend_path PATH '/Users/ascott/.duckdb/cli/latest'
