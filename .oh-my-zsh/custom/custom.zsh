@@ -295,3 +295,6 @@ compdef _s5cmd_cli_zsh_autocomplete s5cmd
 
 #  duckdb
 prepend_path PATH '/Users/ascott/.duckdb/cli/latest'
+
+# docker
+append_path PATH '/Applications/Docker.app/Contents/Resources/bin/'
