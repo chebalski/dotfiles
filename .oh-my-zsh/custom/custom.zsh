@@ -231,7 +231,8 @@ unalias z
 # init commacd
 source ~/.commacd.sh;
 
-# init fzf
+# init fzf\
+source <(fzf --zsh)
 [ -f .fzf/install ] && .fzf/install --key-bindings --completion --no-update-rc &> /dev/null;
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash;
 

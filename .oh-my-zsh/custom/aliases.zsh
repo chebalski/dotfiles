@@ -97,10 +97,10 @@ type xdg-open >/dev/null 2>&1 && alias open='xdg-open'
 alias o='a -e open'
 
 # docker
-alias dcb="docker-compose build"
-alias dcd="docker-compose down"
-alias dcr="docker-compose run --rm"
-alias dcu="docker-compose up"
+alias dcb="docker compose build"
+alias dcd="docker compose down"
+alias dcr="docker compose run --rm"
+alias dcu="docker compose up"
 alias dex='docker exec -it $(dl) $1'
 alias di="docker images" # Get images
 alias dl="docker ps -l -q" # Get latest container ID
