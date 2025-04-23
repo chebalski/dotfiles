@@ -22,3 +22,5 @@ Thumbs.db
 *.extra
 
 .vscode
+
+.cursor

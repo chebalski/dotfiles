@@ -299,3 +299,36 @@ prepend_path PATH '/Users/ascott/.duckdb/cli/latest'
 
 # docker
 append_path PATH '/Applications/Docker.app/Contents/Resources/bin/'
+
+# Function to find and activate Python virtual environment
+uvsh() {
+  local dir="$PWD"
+  
+  # Keep going up the directory tree until we find a .venv, uv.lock, or reach the root
+  while [[ "$dir" != "/" ]]; do
+    # Check for uv.lock first - if found, stop looking further
+    if [[ -f "$dir/uv.lock" ]]; then
+      if [[ -d "$dir/.venv" && -f "$dir/.venv/bin/activate" ]]; then
+        echo "Found virtual environment at $dir/.venv"
+        source "$dir/.venv/bin/activate"
+        return 0
+      else
+        echo "Found uv.lock at $dir but no virtual environment"
+        return 1
+      fi
+    fi
+    
+    # Check for .venv
+    if [[ -d "$dir/.venv" && -f "$dir/.venv/bin/activate" ]]; then
+      echo "Found virtual environment at $dir/.venv"
+      source "$dir/.venv/bin/activate"
+      return 0
+    fi
+    
+    dir="$(dirname "$dir")"
+  done
+  
+  echo "No virtual environment (.venv) found in parent directories"
+  return 1
+}
+
