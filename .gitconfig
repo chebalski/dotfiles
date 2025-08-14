@@ -85,6 +85,7 @@
     # Tired of forgetting to fully type out "add"
     a = add
 
+	wt = worktree
 
 [apply]
 
