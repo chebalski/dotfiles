@@ -111,6 +111,7 @@ alias dprune="docker container prune -f && docker image prune -f"
 
 # aws
 alias als="aws s3 ls --human-readable"
+alias sls="s5cmd ls -H"
 
 # k8s
 alias k='kubectl'
